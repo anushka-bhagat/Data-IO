@@ -39,3 +39,17 @@ HeatMap(heat_data,
 
 # Display the map
 chicago_map
+
+# Find the 10 stations with the lowest count
+lowest_count_stations = station_counts.nsmallest(10, 'count')
+
+# Find the 10 stations with the highest count
+highest_count_stations = station_counts.nlargest(10, 'count')
+
+# Display the top 10 stations with the lowest count in a visual table
+print("Top 10 Stations with Lowest Count:")
+display(lowest_count_stations.style.hide_index())
+
+# Display the top 10 stations with the highest count in a visual table
+print("\nTop 10 Stations with Highest Count:")
+display(highest_count_stations.style.hide_index())
